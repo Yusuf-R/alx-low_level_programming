@@ -29,11 +29,11 @@ int main(void)
 	{
 		printf("%s %d is %d %s\n", Op, n, last_digit, Out_1);
 	}
-	else if (n == 0)
+	else if (last_digit == 0)
 	{
 		printf("%s %d is %d %s\n", Op, n, last_digit, Out_3);
 	}
-	else if (n < 6)
+	else if (last_digit < 6)
 	{
 		printf("%s %d is %d %s\n", Op, n, last_digit, Out_2);
 	}
