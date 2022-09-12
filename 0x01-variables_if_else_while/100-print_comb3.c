@@ -19,11 +19,11 @@ int main(void)
 		y_i = i % 10;
 		for (j = i; j <= i; j++)
 		{
-			if (y_i == 0 | x_i == y_i | x_i == y_i + 1
-					| x_i == y_i + 2 | x_i == y_i + 3
-					| x_i == y_i + 4 | x_i == y_i + 5
-					| x_i == y_i + 6 | x_i == y_i + 7
-					| x_i == y_i + 8 | x_i == y_i + 9)
+			if ((y_i == 0) | (x_i == y_i) | (x_i == y_i + 1)
+					| (x_i == y_i + 2) | (x_i == y_i + 3)
+					| (x_i == y_i + 4) | (x_i == y_i + 5)
+					| (x_i == y_i + 6) | (x_i == y_i + 7)
+					| (x_i == y_i + 8) | (x_i == y_i + 9))
 				continue;
 
 		tens = (x_i + '0');
