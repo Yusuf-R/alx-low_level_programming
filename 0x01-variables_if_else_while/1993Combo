@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * main - Prints all possible combinations of three different digits,
+ *        in ascending order, separated by a comma followed by a space.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	int i;
+	int j;
+	int k;
+	int x_i, y_i , z_i;
+	int huns;
+	int tens;
+	int units;
+	
+	for (i = 0; i < 10; i++)
+		{
+      			for (j = 0; j < 10; j++)
+				{
+					for (k = 0; k < 10; k++)
+						{
+							x_i = i % 10;
+							y_i = j % 10;
+							z_i = k % 10;
+							huns = (x_i+'0');
+							tens = (y_i + '0');
+							units = (z_i+'0');
+							if ((x_i == y_i) | (x_i == z_i) | (y_i == z_i) | (x_i == y_i+1) | (x_i == y_i + 2)
+									| (x_i == y_i + 3) | (x_i == y_i + 4) | (x_i == y_i + 5)
+									| (x_i == y_i + 6) | (x_i == y_i + 7) | (x_i == y_i + 8)
+									| (x_i == y_i + 9) | (x_i == z_i + 1) | (x_i == z_i + 2)
+									| (x_i == z_i + 3) | (x_i == z_i + 4) | (x_i == z_i + 5)
+									| (x_i == z_i + 6) | (x_i == z_i + 7) | (x_i == z_i + 8)
+									| (x_i == z_i + 9) | (y_i == z_i + 1) | (y_i == z_i + 2)
+									| (y_i == z_i + 3) | (y_i == z_i + 4) | (y_i == z_i + 5)
+									|(y_i == z_i + 6) | (y_i == z_i + 7) | (y_i == z_i + 8)
+									| (y_i == z_i + 9)
+									continue;
+							putchar(huns);
+							putchar(tens);
+							putchar(units);
+							if (huns == '7' && tens == '8' && units == '9')
+								continue;
+							putchar(',');
+							putchar(' ');
+						}
+        			}
+    		}
+	putchar('\n');
+	return (0);
+}
