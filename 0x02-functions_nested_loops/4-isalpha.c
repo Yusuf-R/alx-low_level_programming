@@ -6,7 +6,7 @@
  * Check if alphabet is lower
  * Return: Always 0 (Success)
  */
-int _islower(int c)
+int _isalpha(int c)
 {
 	if ((c >= 65 && c <= 94) || (c >= 97 && c <= 122))
 	{
