@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _4-isalpha - Entry point
+ * _isalpha - Entry point
  * @c: is ASCII
  * Check if alphabet is lower
  * Return: Always 0 (Success)
