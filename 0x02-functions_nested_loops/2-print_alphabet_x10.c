@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * Using a function called _putchar to
- * print out _putchar
+ * print_alphabet_x10 - Entry point
+ * print_alphabet from a-z with a function
  * Return: Always 0 (Success)
  */
-
-int  main(void)
+void print_alphabet_x10(void)
 {
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
+	int repeat;
+	int letters;
+
+	for (repeat = 1; repeat <= 10; repeat++)
+	{
+		for (letters = 97; letters <= 122; letters++)
+		{
+		_putchar(letters);
+		}
 	_putchar('\n');
-	return (0);
+	}
 }
+
