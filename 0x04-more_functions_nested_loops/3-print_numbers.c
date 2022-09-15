@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_number - To print out 0-9
+ * print_numbers - To print out 0-9
  * Return: 0 Success,  It returns the product of two numbers
  */
 
