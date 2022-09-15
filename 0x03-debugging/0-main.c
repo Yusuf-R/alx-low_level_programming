@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
- * This program test the function to print if
- * and integer is positive or negative
- * Retunrn - 0 for Success.
+ * main - tests function that pints if an intger is positive or negative
+ * Return: 0 for Success.
  */
-int main (void)
+
+int main(void)
 {
 	int i;
 
