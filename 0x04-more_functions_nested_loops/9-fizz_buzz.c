@@ -24,7 +24,7 @@ int main(void)
 			printf("Buzz ")
 		}
 		else
-			printf("%d ",n_count);
+			printf("%d ", n_count);
 	}
 	printf("\n");
 }
