@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * more_numbers - To print out 0-14 ten times
+ * print_line - To print out any number or lines
  * @n: integer parameter
  * Return: 0 Success,
  */
 
 void print_line(int n)
 {
-	while(n > 0)
+	while (n > 0)
 	{
 		_putchar('_');
 		n--;
 	}
-	putchar('\n');
+	_putchar('\n');
 }
