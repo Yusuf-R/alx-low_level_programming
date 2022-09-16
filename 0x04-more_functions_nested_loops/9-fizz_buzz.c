@@ -2,7 +2,7 @@
 
 /**
  * main  - To play the game of Fizz Buzz
- * Return: 0 Success,  It returns the product of two numbers
+ * Return: 0 Success
  */
 
 int main(void)
