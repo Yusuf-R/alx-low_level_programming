@@ -25,7 +25,7 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", n_count);
+			printf("%i ", n_count);
 		}
 	}
 	printf("\n");
