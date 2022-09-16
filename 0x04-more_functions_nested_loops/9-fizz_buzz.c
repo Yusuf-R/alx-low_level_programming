@@ -13,18 +13,18 @@ int main(void)
 	{
 		if ((n_count % 3 == 0) && (n_count % 5 == 0))
 		{
-			printf("Fizz Buzz ");
+			printf("Fizz Buzz");
 		}
 		else if (n_count % 3 == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if (n_count % 5 == 0)
 		{
-			printf("Buzz ")
+			printf("Buzz")
 		}
 		else
-			printf("%d ", n_count);
+			printf("%d", n_count);
 	}
 	printf("\n");
 }
