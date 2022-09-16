@@ -9,13 +9,13 @@
 void print_diagonal(int n)
 {
 	int spacing;
-	int use_input;
+	int user_input;
 
 	for (user_input = 1; user_input <= n; user_input++)
 	{
 		_putchar('\\');
 		_putchar('\n');
-		for (spacing = 1; spacing <= user_input; user_input++)
+		for (spacing = 1; spacing <= user_input; spacing++)
 		{
 			_putchar(' ');
 		}
