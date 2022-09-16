@@ -27,7 +27,7 @@ int main(void)
 		{
 			printf("%d", n_count);
 		}
-		
+
 		if (n_count != 100)
 			printf(" ");
 		printf("\n");
