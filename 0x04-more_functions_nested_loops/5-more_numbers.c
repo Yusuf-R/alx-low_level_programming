@@ -10,12 +10,13 @@ void more_numbers(void)
 	int num_i, num_j;
 	int q, iter;
 
-	for (iter = 0; iter <= 10; iter++)
+	for (iter = 1; iter <= 10; iter++)
 	{
 		for (q = 0; q <= 14; q++)
 		{
 			num_i = q / 10;
 			num_j = q % 10;
+
 			if (q >= 10)
 			{
 				_putchar(num_i + '0');
