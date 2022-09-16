@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- *main  - To play the game of Fizz Buzz
+ * main  - To play the game of Fizz Buzz
  * Return: 0 Success,  It returns the product of two numbers
  */
 
@@ -21,7 +21,7 @@ int main(void)
 		}
 		else if (n_count % 5 == 0)
 		{
-			printf("Buzz ")
+			printf("Buzz ");
 		}
 		else
 			printf("%d ", n_count);
