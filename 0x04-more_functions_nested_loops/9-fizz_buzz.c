@@ -25,11 +25,13 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", n_count);
+			printf("%d", n_count);
 		}
+		
+		if (n_count != 100)
+			printf(" ");
+		printf("\n");
 	}
-	printf("\n");
-
 	return (0);
 }
 
