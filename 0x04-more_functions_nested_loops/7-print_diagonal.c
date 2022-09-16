@@ -11,7 +11,7 @@ void print_diagonal(int n)
 	int spacing;
 	int user_input;
 
-	if (n <= 0)
+	if (n < 0)
 	{
 		_putchar('\n');
 	}
