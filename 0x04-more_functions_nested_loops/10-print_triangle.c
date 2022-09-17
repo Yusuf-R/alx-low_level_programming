@@ -19,11 +19,11 @@ void print_triangle(int size)
 	{
 		for (cols = rows; cols < size; cols++)
 		{
-			_putchar(' ');
+			_putchar('  ');
 		}
 		for (cols = 1; cols <= rows; col++)
 		{
-			_putchar('#');
+			_putchar('# ');
 		}
 
 	_printf('\n');
