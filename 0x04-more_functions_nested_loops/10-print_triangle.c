@@ -8,20 +8,24 @@
 
 void print_triangle(int size)
 {
-	int tri_rows;
-	int tri_cols;
+	int rows, cols;
 
 	if (size <= 0)
 	{
 		_putchar('\n');
 	}
 
-	for (sq_rows = 1; sq_rows <= size; sq_rows++)
+	for (rows = 1; rows <= size; rows++)
 	{
-		for (sq_cols = 1; sq_cols <= size; sq_cols++)
+		for (cols = rows; cols < size; cols++)
+		{
+			_putchar(' ');
+		}
+		for (cols = 1; cols <= rows; col++)
 		{
 			_putchar('#');
 		}
-		_putchar('\n');
+
+	_printf('\n');
 	}
 }
