@@ -21,12 +21,14 @@ void print_triangle(int size)
 		{
 			_putchar(' ');
 		}
-		for (cols = 1; cols <= rows; col++)
+		for (cols = 1; cols <= rows; cols++)
 		{
 			_putchar('#');
 		}
 
 	_putchar('\n');
+
 	}
+
 	_putchar('\n')
 }
