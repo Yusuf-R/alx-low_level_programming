@@ -8,53 +8,16 @@
  */
 void print_number(int n)
 {
-	unsigned int un = 0;
+	unsigned int num = n;
 
 	if (n < 0)
 	{
-		if (n < 1000000000)
-			n = -n;
-		un = n;
 		_putchar(45);
-		num_to_char(n);
+		num = -num;
 	}
-	else
+	if ((num / 10) > 0)
 	{
-		un = n;
-		num_to_char(un);
+		print_number(num / 10);
 	}
-}
-
-/**
- * num_to_char - transforms a number with 1 or more digits into a char
- * @n: number to print
- *
- * Return: void
- */
-void num_to_char(unsigned int n)
-{
-	unsigned int d = 10;
-
-	if (n < d)
-	{
-		_putchar('0' + n);
-	}
-	else
-	{
-		while (n >= d)
-		{
-			d *= 10;
-			if (d == 1000000000)
-				break;
-		}
-		if (!(d == 1000000000) || n == 123456789)
-			d /= 10;
-		_putchar('0' + n / d);
-		while (d != 10)
-		{
-			d /= 10;
-			_putchar('0' + (n / d) % 10);
-		}
-		_putchar('0' + n % 10);
-	}
+	_putchar((num % 10) + '0');
 }
