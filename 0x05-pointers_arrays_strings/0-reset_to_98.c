@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* main - Entry point to our function
+* reset_to_98 - Entry point to our function that takes a pointer integer as parameter
 * @n: a pointer variable that takes and int
 * Return: 0. For Success
 */
