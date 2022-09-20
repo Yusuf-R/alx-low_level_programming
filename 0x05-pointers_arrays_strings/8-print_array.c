@@ -17,7 +17,7 @@ void print_array(int *a, int n)
 		if (kofo != n - 1)
 		printf("%d, ", a[kofo]);
 		else
-		printf("%d ", a[kofo]);
+		printf("%d", a[kofo]);
 	}
 	putchar(10);
 }
