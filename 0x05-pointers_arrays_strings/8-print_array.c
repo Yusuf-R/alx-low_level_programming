@@ -14,7 +14,7 @@ void print_array(int *a, int n)
 
 	for (inc = 0; inc < n ; inc++)
 	{
-		printf("%d", a[inc]);
+		printf("%d, ", a[inc]);
 	}
 	putchar(10);
 }
