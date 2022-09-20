@@ -15,4 +15,5 @@ void _puts(char *str)
 	{
 		putchar(*(str + counter));
 	}
+	_putchar(10);
 }
