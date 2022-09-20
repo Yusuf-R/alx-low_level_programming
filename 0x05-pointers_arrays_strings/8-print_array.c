@@ -10,11 +10,14 @@
 
 void print_array(int *a, int n)
 {
-	int inc;
+	int kofo;
 
-	for (inc = 0; inc < n ; inc++)
+	for (kofo = 0; kofo < n ; kofo++)
 	{
-		printf("%d, ", a[inc]);
+		if (kofo != n - 1)
+		printf("%d, ", a[kofo]);
+		else
+		printf("%d ", a[kofo]);
 	}
 	putchar(10);
 }
