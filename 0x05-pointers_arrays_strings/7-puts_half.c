@@ -13,7 +13,7 @@ void puts_half(char *str)
 	int i = 0;
 	char storage;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		counter++;
 	}
