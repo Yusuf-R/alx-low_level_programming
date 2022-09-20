@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* _print_rev - Entry point to our function
+* print_rev - Entry point to our function
 * @s: a pointer variable that takes string
 * Return: 0. For Success
 */
