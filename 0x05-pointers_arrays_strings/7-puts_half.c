@@ -22,13 +22,13 @@ void puts_half(char *str)
 	{
 	for (i = (counter - 1) / 2; i <= counter; i++)
 	{
-		_putchar(*(str + i)
+		_putchar(*(str + i);)
 	}
 	}
 	else
 	for (i = counter / 2; i <= counter; i++)
 	{
-		_putchar(*(str + i)
+		_putchar(*(str + i));
 	}
 
 	_putchar(10);
