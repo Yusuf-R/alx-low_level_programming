@@ -11,7 +11,6 @@ void puts_half(char *str)
 {
 	int counter = 0;
 	int i = 0;
-	char storage;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -19,6 +18,6 @@ void puts_half(char *str)
 	}
 
 	for (i =  counter / 2; i < counter; i++)
-		_putcar(*(str + i));
+		_putchar(*(str + i));
 	_putchar('\n');
 }
