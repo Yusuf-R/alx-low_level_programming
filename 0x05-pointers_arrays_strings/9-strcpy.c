@@ -12,7 +12,6 @@ char *_strcpy(char *dest, char *src)
 {
 	int index;
 	int src_len = 0;
-	int dest_len = 0;
 
 	for (index = 0; src[index] != '\0'; index++)
 	{
