@@ -10,7 +10,7 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	unsigned int index_s, index_d, index_cat;
+	int index_s, index_d, index_cat;
 	int src_len = 0;
 	int dest_len = 0;
 
