@@ -24,7 +24,7 @@ char *_strcpy(char *dest, char *src)
 	}
 	for (index_cat = 0; index_cat <= src_len; index_cat++)
 	{
-		dest[dest_len + index_cat] = src[index_cat];
+		dest[index_cat] = src[index_cat];
 	}
 
 	return (dest);
