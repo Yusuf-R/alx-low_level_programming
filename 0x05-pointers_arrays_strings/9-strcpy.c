@@ -10,21 +10,17 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	int index_s, index_d, index_cat;
+	int index;
 	int src_len = 0;
 	int dest_len = 0;
 
-	for (index_s = 0; src[index_s] != '\0'; index_s++)
+	for (index = 0; src[index] != '\0'; index++)
 	{
 		src_len++;
 	}
-	for (index_d = 0; dest[index_d] != '\0'; index_d++)
+	for (index = 0; index <= src_len; index++)
 	{
-		dest_len++;
-	}
-	for (index_cat = 0; index_cat <= src_len; index_cat++)
-	{
-		dest[index_cat] = src[index_cat];
+		dest[index] = src[index];
 	}
 
 	return (dest);
