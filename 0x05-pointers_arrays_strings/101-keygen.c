@@ -12,6 +12,7 @@
 
 int main(void)
 {
+	char *password;
 	int length;
 	int i = 0;
 	char *digits = "0123456789";
@@ -25,7 +26,7 @@ int main(void)
 
 	printf("Enter Length of your password: ");
 	scanf("%d", &length);
-	char *password = malloc(length + 1);
+	password = malloc(length + 1);
 
 	if (length <= 0)
 	{
