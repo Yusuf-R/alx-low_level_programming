@@ -10,7 +10,8 @@
 */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int src_len, dest_len = 0;
+	int src_len = 0;
+	int dest_len = 0;
 	int iter = 0;
 
 	for (iter = 0; dest[iter] != '\0'; iter++)
@@ -20,7 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 
 	for (iter = 0; src[iter] != '\0'; iter++)
 	{
-		src_lent++;
+		src_len++;
 	}
 	if (n <= src_len)
 	{
@@ -42,4 +43,5 @@ char *_strncpy(char *dest, char *src, int n)
 		}
 		return (dest);
 	}
+return (dest);
 }
