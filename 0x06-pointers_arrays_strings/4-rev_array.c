@@ -13,6 +13,8 @@ void reverse_array(int *a, int n)
 	int mid_pt;
 
 	mid_pt = n / 2;
+	if (n < 0)
+		return;
 	for (i = 0; i < mid_pt; i++)
 	{
 		Num_copy = a[i];
