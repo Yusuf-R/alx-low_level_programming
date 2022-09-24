@@ -19,7 +19,7 @@ char *string_toupper(char *s)
 	for (counter = 0; s[counter] <= src_len; counter++)
 	{
 		if (s[counter] >= 97 && s[counter] <= 122)
-			s[counter] = s[counter] -32;
+			s[counter] = s[counter] - 32;
 	}
 	return (s);
 }
