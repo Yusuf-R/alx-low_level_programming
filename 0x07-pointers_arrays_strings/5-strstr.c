@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-* _strstrk - This function is used  used to return the first
+* _strstr - This function is used  used to return the first
 * occurrence of the substring str2 in a string str1
 * @haystack: The pointer to the string to be scanned
 * @needle: The string containg the character to match
