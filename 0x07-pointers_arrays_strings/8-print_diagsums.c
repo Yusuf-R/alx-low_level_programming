@@ -11,19 +11,22 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int n = 0, m = 0, p = 1;
-	long int d1 = 0, d2 = 0;
+	int j;
+	int bk;
+	int f_diag;
+	int b_diag;
 
-	for (i = 0; i < size; i++)
+	bk = size * size;
+	f_diag = 0;
+	b_diag = 0;
+
+	for (i = 0; i < bk; i = i + size + 1)
 	{
-		d1 += a[(size * m) + m];
-		m++;
+		f_diag = f_diag + *(a + i);
 	}
-	for (i = 0; i < size; i++)
+	for (j = size - 1; j < bk - 1; j = j  + size - 1)
 	{
-		d2 += a[(size * n) + (size - p)];
-		n++;
-		p++;
+		b_diag = b_diag + *(a + j);
 	}
-	printf("%ld, %ld\n", d1, d2);
+	printf("%d, %d\n", f_diag, b_diag);
 }
