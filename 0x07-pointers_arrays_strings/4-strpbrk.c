@@ -30,7 +30,7 @@ char *_strpbrk(char *s, char *accept)
 			{
 				for (k = i; s[k]; k++)
 				{
-					s[i] = s[k];
+					s[k] = s[i];
 				}
 				return (s);
 			}
