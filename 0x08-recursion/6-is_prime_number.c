@@ -14,6 +14,11 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
+
+	if (n == 1 || 2 || 3)
+	{
+		return (1);
+	}
 	return (prime_helper(n, 2));
 }
 
