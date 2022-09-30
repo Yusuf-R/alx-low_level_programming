@@ -14,5 +14,7 @@ int prime_helper(int n, int p_num);
 int is_palindrome(char *s);
 int length_of_array(char *s);
 int check(char *p, char *q);
+int wildcmp(char *s1, char *s2);
+
 
 #endif /*MAIN_H*/
