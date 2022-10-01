@@ -22,6 +22,7 @@ int digit_check(char *str_input)
 		}
 	return (0);
 	}
+	return (0);
 }
 
 /**
