@@ -1,33 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <ctype.h>
 
 /**
-* main - a program that adds positive numbers
-* @argc: the number of command-line arguments
-* @argv: an array of strings containing the command-line arguments
-* Return: returns 0 (success)
+*main - This program demonstrates the argument to main
+*
+*@argc: Called ARGumentCount, it counts the arguments
+*
+*@argv: is a pointer array which points to each
+*argument passed to the program.
+*
+*Description - to adds positive numbers.
+*
+*Return: 0 if successful
 */
+
 int main(int argc, char *argv[])
 {
 	int i;
-	int sum = 0;
-	char *digit = 0;
+	int sum;
+	int valid;
+
+	sum = 0;
 
 	if (argc == 1)
+		printf("%d\n", argc - 1);
+	if (argc > 1)
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (i = 1; i < argc; i++)
-	{
-		sum += strtol(argv[i], &digit, 10);
-		if (*digit != 0)
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			if (atoi(argv[i]) == 0)
+			{
+				printf("Error\n");
+				return (1);
+			}
+
+			valid = atoi(argv[i]);
+			sum = sum  + valid;
 		}
+		printf("%d\n", sum);
 	}
-	printf("%d\n", sum);
 	return (0);
 }
