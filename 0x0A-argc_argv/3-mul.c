@@ -25,9 +25,11 @@ int main(int argc, char *argv[])
 	mul = 1;
 
 	if (argc == 1)
+	{
 		printf("Error\n");
-
-	else if (argc >= 2)
+		return(1);
+	}
+	else if (argc > 1 && argc < 4)
 	{
 		for (i = 1; i < argc; i++)
 		{
