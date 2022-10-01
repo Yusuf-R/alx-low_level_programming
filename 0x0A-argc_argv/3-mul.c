@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	if (argc > 1 && argc < 4)
 	{
-		for (i = 1; i < 4; i++)
+		for (i = 1; i < argc; i++)
 		{
 			mul = mul * atoi(argv[i]);
 		}
