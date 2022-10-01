@@ -23,11 +23,11 @@ int main(int argc, char *argv[])
 	int mul;
 
 	mul = 1;
-	
-	if(argc == 1)
+
+	if (argc == 1)
 		printf("Error\n");
 
-	else if(argc >= 2)
+	else if (argc >= 2)
 	{
 		for (i = 1; i < argc; i++)
 		{
