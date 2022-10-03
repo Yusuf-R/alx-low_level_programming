@@ -1,4 +1,4 @@
-i#include <stdio.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -25,7 +25,7 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 		if (accept[j] == '\0')
-			return (counter);
+			return (count);
 	}
 
 	return (count);
