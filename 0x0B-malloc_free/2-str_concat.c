@@ -45,7 +45,7 @@ char *str_concat(char *s1, char *s2)
 	for (count = 0; count < len1; count++)
 	{
 		mem[count] = s1[count];
-	}}
+	}
 	for (count = 0; count < len2; count++)
 	{
 		mem[len1 + count] = s2[count];
