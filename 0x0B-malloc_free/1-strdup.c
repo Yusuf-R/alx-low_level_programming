@@ -19,7 +19,6 @@ char *_strdup(char *str)
 	int i;
 	int len;
 	int count;
-	char *error = "failed to allocate memor";
 
 	len = 1;
 
@@ -32,11 +31,11 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	mem = malloc(sizeof(*mem) * len);
+	mem = malloc(sizeof(*str) * len);
 
 	if (mem == NULL)
 	{
-		return (error);
+		return (NULL);
 	}
 
 	for (i = 0; i < len; i++)
