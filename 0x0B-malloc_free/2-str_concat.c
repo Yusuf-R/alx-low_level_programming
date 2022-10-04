@@ -16,7 +16,7 @@
 char *str_concat(char *s1, char *s2)
 {
 
-	char *mem, char *str_cat;
+	char *mem;
 	int i, len1, len2, count, cat_count, cat_L;
 
 	len1 = 0;
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 		len2++;
 	}
 	cat_L = len1 + len2;
-	mem = malloc(sizeof(*char) * cat_L);
+	mem = malloc(sizeof(char) * cat_L);
 
 	if (mem == NULL)
 	{
