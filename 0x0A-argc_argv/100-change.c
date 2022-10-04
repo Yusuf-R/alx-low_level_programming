@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	int quarters_25, dimes_10, nickels_5, coin_2, pennies_1;
 	int change;
 
-	if (argc != 2)
+	if (argc > 2)
 	{
 		printf("Error\n");
 		return (1);
