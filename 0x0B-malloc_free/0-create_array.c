@@ -1,4 +1,6 @@
 #include "main.h"
+#include "stddef.h"
+
 
 /**
 *create_array - this function will creates an array of
