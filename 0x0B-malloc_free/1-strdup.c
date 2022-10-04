@@ -19,7 +19,7 @@ char *_strdup(char *str)
 	int i;
 	int len;
 	int count;
-	char *error = "failed to allocate memor"
+	char *error = "failed to allocate memor";
 
 	len = 1;
 
