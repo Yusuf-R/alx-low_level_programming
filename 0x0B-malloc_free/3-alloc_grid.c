@@ -16,7 +16,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **mem2D;
-	int row_h, col_w, count, j;
+	int row_h, col_w, j;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -40,9 +40,6 @@ int **alloc_grid(int width, int height)
 				free(mem2D);
 				return (NULL);
 			}
-	}
-	for (row_h = 0; row_h < height; count++)
-	{
 		for (col_w = 0; col_w < width; col_w++)
 		{
 			mem2D[row_h][col_w] = 0;
