@@ -9,13 +9,12 @@
 *@grid: The previous NxM matrix created
 *@height: similar to the rows
 *
-*Return: Returns the matrix and error for NULL
+*Return: Returns nothing.
 */
 
 void free_grid(int **grid, int height)
 {
-	int row_h;
-	if (grid == NULL)
+	if (grid == NULL || height <= 0)
 	{
 		free(grid);
 	}	
