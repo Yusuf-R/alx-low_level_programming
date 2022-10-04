@@ -4,7 +4,7 @@
 #include "string.h"
 
 /**
-*_strdup - this function returns a pointer 
+*_strdup - this function returns a pointer
 *to a newly allocated space in memory.
 *
 *@str: the total bytes to be filled the char c
@@ -19,14 +19,14 @@ char *_strdup(char *str)
 	int i;
 	int len;
 	int count;
-	
+
 	len = 1;
 
 	for (count = 0; str[count] != '\0'; count++)
 	{
 		len++;
 	}
-	
+
 	if (str == NULL)
 	{
 		return (NULL);
