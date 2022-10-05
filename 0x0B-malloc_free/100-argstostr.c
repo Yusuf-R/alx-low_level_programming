@@ -32,7 +32,7 @@ char *argstostr(int ac, char **av)
 		cat_len += len_argv;
 		cat_len++;
 	}
-	mem = (char *) malloc(sizeof(*mem) * cat_len);
+	mem = (char *) malloc(sizeof(*mem) * cat_len + 1);
 	if (mem == NULL)
 	{
 		return (NULL);
