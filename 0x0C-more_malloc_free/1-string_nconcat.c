@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	memory = malloc(sizeof(*memory) * sum_len);
 	if (memory == NULL)
 		return (NULL);
-	for (j = 0; j < len1; j++)
+	for (j = 0; s1[j] != '\0'; j++)
 		memory[j] = s1[j];
 	if (n >= len2)
 	{
