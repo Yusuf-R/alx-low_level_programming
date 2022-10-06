@@ -15,41 +15,32 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *memory;
-	unsigned int i, j, len1, len2, sum_len;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-	len1 = len2 = sum_len = 0;
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	for (i = 0; s1[i] != '\0'; i++)
+	while (s1[len1] && s1)
+	{
 		len1++;
-	for (i = 0; s2[i] != '\0'; i++)
+	}
+	while (s2[len2] && s2)
+	{
 		len2++;
+	}
 	if (n >= len2)
-		sum_len = len1 + len2;
-	else if (n < len2)
-		sum_len = len1 + n;
-	memory = malloc(sizeof(*memory) * sum_len);
+		n = len2;
+	memory = malloc(sizeof(char) * (len1 + n + 1));
 	if (memory == NULL)
 		return (NULL);
-	for (j = 0; s1[j] != '\0'; j++)
-		memory[j] = s1[j];
-	if (n >= len2)
+	while (s1[i] && s1)
 	{
-		for (j = 0; j < len2; j++)
-		{
-			memory[len1 + j] = s2[j];
-		}
-		memory[len1 + len2] = '\0';
+		memory[i] = s1[i];
+		i++;
 	}
-	else if (n < len2)
+	while (j < n && s2)
 	{
-		for (j = 0; j < n; j++)
-		{
-			memory[len1 + j] = s2[j];
-		}
-		memory[len1 + n] = '\0';
+		memory[i + j] = s2[j];
+		j++;
 	}
+	memory[i + j] = '\0';
+
 	return (memory);
 }
