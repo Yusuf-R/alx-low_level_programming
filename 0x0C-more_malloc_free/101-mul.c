@@ -1,118 +1,109 @@
-#include <stdio.h>
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-void Error(void);
-int _putchar(char c);
-int digit_check(char *s);
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - Entry point of program.
+ * @argc: Arguments count.
+ * @argv: Array of strings of each argument.
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Description: Multiplies two numbers given as commandline arguments.
+ * Return: Returns 0 if successful.
  */
-
-int _putchar(char c)
+int main(int argc, char **argv)
 {
-	return (write(1, &c, 1));
-}
+	char *str1, *str2;
+	int len1, len2, tot_len, i, c_o, digit1, digit2, *result, start = NO;
 
-/**
- * str_cnt - count the string length
- * @s: the pointer to the string
- * Return: the string lenght
- */
-
-int str_cnt(char *s)
-{
-	int len;
-
-	len = 0;
-	while (s[len])
+	str1 = argv[1], str2 = argv[2];
+	if (argc != 3 || check_non_digit(str1) == 1 || check_non_digit(str2) == 1)
+		ErrorMsg();
+	len1 = _strlen(str1);
+	len2 = _strlen(str2);
+	tot_len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * tot_len);
+	if (result == NULL)
+		return (1);
+	for (i = 0; i < tot_len; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		len++;
+		c_o = 0;
+		digit1 = str1[len1] - 48;
+		for (len2 = len2 - 1; len2 >= 0; len2--)
+		{
+			digit2 = str2[len2] - 48;
+			c_o += result[len1 + len2 + 2] + (digit1 * digit2);
+			result[len1 + len2 + 2] = c_o % 10;
+			c_o /= 10;
+		}
+		if (c_o > 0)
+			result[len1 + len2 + 2] += c_o;
 	}
-	return (len);
+	for (i = 0; i < tot_len; i++)
+	{
+		if (result[i])
+			start = YES;
+		if (start)
+			_putchar(result[i] + 48);
+	}
+	if (start == NO)
+		_putchar(48);
+	_putchar('\n');
+	free(result);
+	return (0);
 }
-/**
- * digit_check - check if string is digit
- * @s: the pointer to the string
- * Return: the Error if false
- */
 
-int digit_check(char *s)
+/**
+ * check_non_digit - Loops through a string and checks for a non-digit.
+ * @str: Pointer to string to be checked.
+ *
+ * Return: Returns 0 if non-digit found, 1 if not.
+ */
+int check_non_digit(char *str)
 {
 	int i;
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
-		if (s[i] < '0' || s[i]  > '9')
+		if (str[i] < 48 || str[i] > 57)
 			return (1);
 	}
 	return (0);
 }
 
 /**
-* Error - Error message
-* Return: Error with exit 98
-*/
-
-void Error(void)
+ * _print_str - Prints a string.
+ * @str: Pointer to strings to be printed.
+ * @len: Length of the string.
+ *
+ * Return: No specified return value.
+ */
+void _print_str(char *str, unsigned int len)
 {
-	printf("Error\n");
+	unsigned int i;
+
+	for (i = 0; i < len; i++)
+		_putchar(str[i]);
+}
+
+/**
+ * ErrorMsg - Prints an error message and stops program with exit code.
+ */
+void ErrorMsg(void)
+{
+	_print_str("Error", _strlen("Error"));
+	_putchar('\n');
 	exit(98);
 }
 
 /**
- *main - the progrma multiplies two positive number
- *@argc: Argument count
- *@argv: vector pointer
- *Return: the product of twon numbers
+ * _strlen - Counts the number of characters in a string.
+ * @str: Pointer to string.
+ *
+ * Return: Number of characters in the string.
  */
-
-int main(int argc, char **argv)
+unsigned int _strlen(char *str)
 {
-	char *input_1, *input_2;
-	int *xly, zero, i, flg, len1, len2, rem, ext, total_len, d1, d2;
-
-	ext = 2, flg = zero = 0;
-
-	input_1 = argv[1], input_2 = argv[2];
-	if (argc != 3 || digit_check(input_1) == 1 || digit_check(input_2) == 1)
-		Error();
-	len1 = str_cnt(input_1), len2 = str_cnt(input_2);
-	total_len = len1 + len2 + 1;
-	xly = malloc(sizeof(int) * total_len);
-	if (xly == NULL)
-		return (1);
-	for (i = 0; i < total_len; i++)
-		xly[i] = 0;
-	for (len1 = len1 - 1; len1 >= 0; len1--)
-	{
-		d1 = input_1[len1] - 48, rem = 0;
-		for (len2 = len2 - 1; len2 >= 0; len2--)
-		{
-			d2 = input_2[len2] - 48;
-			rem += xly[len1 + len2 + ext] + (d1 * d2);
-			xly[len1 + len2 + ext] = rem % 10;
-			rem = rem / 10;
-		}
-		if (rem > 0)
-			xly[len1 + len2 + ext] += rem;
-	}
-	for (i = 0; i < total_len; i++)
-	{
-		if (xly[i])
-			flg = 1;
-		if (flg)
-			_putchar(xly[i] + '0');
-	}
-	if (flg == 0)
-		_putchar(48);
-	_putchar(10);
-	free(xly);
-	return (0);
+	if (!*str)
+		return (0);
+	return (1 + _strlen(str + 1));
 }
