@@ -50,7 +50,7 @@ int digit_check(char *s)
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] < '0' || s[i]  > '9')
-			return(1);
+			return (1);
 	}
 	return (0);
 }
@@ -87,7 +87,7 @@ int main(int argc, char **argv)
 	total_len = len1 + len2 + 1;
 	xly = malloc(sizeof(int) * total_len);
 	if (xly == NULL)
-		return(1);
+		return (1);
 	for (i = 0; i < total_len; i++)
 		xly[i] = 0;
 	for (len1 = len1 - 1; len1 >= 0; len1--)
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 	}
 	if (flg == 0)
 		_putchar(48);
-	putchar(10);
+	_putchar(10);
 	free(xly);
 	return (0);
 }
