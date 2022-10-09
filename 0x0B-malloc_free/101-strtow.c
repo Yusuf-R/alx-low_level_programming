@@ -15,7 +15,7 @@ char **strtow(char *str)
 	int i, j, k, word_count, data, dt;
 
 	data = word_count = dt = 0;
-	if (str ==  NULL || *str == " ")
+	if (str ==  NULL || *str == '\0')
 		return (NULL);
 	for (i = 0; str[i]; i++)
 	{
