@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <string.h>
 
 /**
  * Error - process if a NULL is passed
@@ -17,7 +16,7 @@ char *Error(void)
 	{
 		j++;
 	}
-	mem = malloc(sizeof(char) * (j + 1));
+	mem = malloc(sizeof(*mem) * (j + 1));
 	if (mem == NULL)
 	{
 		free(mem);
