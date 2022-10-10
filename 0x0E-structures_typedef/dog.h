@@ -30,9 +30,6 @@ void print_dog(struct dog *d);
 char *Error(void);
 
 
-typedef struct dog dog_t
-
-
 
 
 #endif
