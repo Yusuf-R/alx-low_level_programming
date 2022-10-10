@@ -30,7 +30,12 @@ void print_dog(struct dog *d);
 char *Error(void);
 
 
-typdef struct dog dog_t;
+typedef struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+}dog_t;
 
 
 
