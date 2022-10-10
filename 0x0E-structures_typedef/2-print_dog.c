@@ -11,7 +11,8 @@ char *Error(void)
 	int i;
 	char *nill = "(nill)";
 	char *mem;
-
+	
+	i = 0;
 	mem = malloc(sizeof(char) * strlen(nill));
 	if (mem == NULL)
 	{
@@ -43,6 +44,3 @@ void print_dog(struct dog *d)
 	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
 
 }
-
-
-
