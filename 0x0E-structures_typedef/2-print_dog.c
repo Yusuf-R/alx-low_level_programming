@@ -9,7 +9,7 @@
 char *Error(void)
 {
 	int i;
-	char *nill = "(nill)";
+	char *nill = "(nil)";
 	char *mem;
 	
 	i = 0;
