@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * Error - process if a NULL is passed
@@ -36,7 +37,7 @@ void print_dog(struct dog *d)
 	if (d == NULL)
 		return;
 	if (d->name == NULL)
-		d->name = Error()
+		d->name = Error();
 	if (d->owner == NULL)
 		d->owner = Error();
 	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
