@@ -8,12 +8,16 @@
 
 char *Error(void)
 {
-	int i;
+	int i, j;
 	char *nill = "(nil)";
 	char *mem;
-	
-	i = 0;
-	mem = malloc(sizeof(char) * strlen(nill));
+
+	i = j = 0;
+	while (nill[j])
+	{
+		j++;
+	}
+	mem = malloc(sizeof(char) * (j + 1));
 	if (mem == NULL)
 	{
 		free(mem);
@@ -24,6 +28,7 @@ char *Error(void)
 		mem[i] = nill[i];
 		i++;
 	}
+	mem[i] = '\0';
 	return (mem);
 }
 
