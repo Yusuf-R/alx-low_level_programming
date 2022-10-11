@@ -1,4 +1,6 @@
 #include "dog.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  *copy - to copy the string into the memory
@@ -15,7 +17,7 @@ char *copy(char *s)
 	if (s == NULL)
 		return (NULL);
 
-	while (s[i])
+	while (s[len])
 	{
 		len++;
 	}
