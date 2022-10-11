@@ -21,6 +21,7 @@ char *copy(char *s)
 	{
 		len++;
 	}
+
 	copy_mem = malloc(sizeof(char) * (len + 1));
 	if (copy_mem == NULL)
 	{
@@ -51,12 +52,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	New_dog = malloc(sizeof(dog_t));
 	if (New_dog == NULL)
 		return (NULL);
+
 	New_dog->name = copy(name);
 	if (New_dog->name == NULL)
 	{
 		free(New_dog);
 		return (NULL);
 	}
+
 	New_dog->owner = copy(owner);
 	if (New_dog->owner == NULL)
 	{
@@ -64,6 +67,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(New_dog);
 		return (NULL);
 	}
+
 	New_dog->age = age;
+
 	return (New_dog);
 }
