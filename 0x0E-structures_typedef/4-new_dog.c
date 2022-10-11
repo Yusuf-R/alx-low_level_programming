@@ -34,7 +34,7 @@ char *copy(char *s)
 			copy_mem[i] = s[i];
 		}
 	}
-	*(mem + i) = '\0';
+	*(copy_mem + i) = '\0';
 	return (copy_mem);
 }
 
