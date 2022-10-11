@@ -22,7 +22,7 @@ char *copy(char *s)
 		len++;
 	}
 
-	copy_mem = malloc(sizeof(char) * (len + 1));
+	copy_mem = (char *) malloc(sizeof(char) * (len + 1));
 	if (copy_mem == NULL)
 	{
 		return (NULL);
@@ -34,6 +34,7 @@ char *copy(char *s)
 			copy_mem[i] = s[i];
 		}
 	}
+	*(mem + i) = '\0';
 	return (copy_mem);
 }
 
