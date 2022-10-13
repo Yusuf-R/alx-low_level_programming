@@ -30,6 +30,6 @@ int (*get_op_func(char *s))(int, int)
 		}
 		i++;
 	}
-		printf("Error exit 99\n")
+		printf("Error\n")
 		exit(99);
 }
