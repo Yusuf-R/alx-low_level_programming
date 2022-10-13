@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
-#include <string.h>
 
 /**
  * main - check the code
@@ -23,7 +22,7 @@ int main(int argc, char **argv)
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	ptr_calc = get_op_func(argv[2]);
-	if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0) && num2 == 0)
+	if ((argv[2] == "/" || argv[2] == "%") && num2 == 0)
 	{
 		printf("Error exit 99\n");
 		exit(100);
