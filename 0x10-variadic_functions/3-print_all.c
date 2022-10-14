@@ -11,7 +11,7 @@ void print_all(const char * const format, ...)
 	va_list argz;
 	char *check;
 	char *sep = "";
-	int i = 0;
+	int flag = 0, i = 0;
 
 	va_start(argz, format);
 	while (format && format[i])
@@ -20,14 +20,17 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 			printf("%s%c", sep, va_arg(argz, int));
+			flag = 1;
 			break;
 
 			case 'i':
 			printf("%s%d", sep, va_arg(argz, int));
+			flag = 1;
 			break;
 
 			case 'f':
 			printf("%s%f", sep, va_arg(argz, double));
+			flag = 1;
 			break;
 
 			case 's':
@@ -35,9 +38,11 @@ void print_all(const char * const format, ...)
 			if (check == NULL)
 				check = "(nil)";
 			printf("%s%s", sep, check);
+			flag = 1;
 			break;
 		}
-		sep = ", ";
+		if (flag == 1)
+			sep = ", ";
 		i++;
 	}
 	va_end(argz);
