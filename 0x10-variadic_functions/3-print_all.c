@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 			case 's':
 			check = va_arg(argz, char *);
 			if (check == NULL)
-			check = "(nil)";
+				check = "(nil)";
 			printf("%s%s", sep, check);
 			break;
 		}
