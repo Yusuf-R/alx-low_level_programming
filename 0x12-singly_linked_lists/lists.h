@@ -1,8 +1,10 @@
 #ifndef LIST_H
 #define LIST_H
 
-
+#include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <stddef.h>
 
 void myStartupFun(void)__attribute__((constructor));
 
