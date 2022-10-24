@@ -8,14 +8,14 @@
 
 size_t listint_len(const listint_t *h)
 {
-	const list_t *tmp;
+	const listint_t *tmp;
 	size_t count;
 
 	count = 0;
 	for (tmp = h; tmp != NULL; tmp = tmp->next)
 	{
 		count++;
-		printf("%u", tmp->n);
+		printf("%d", tmp->n);
 	}
 	return (count);
 }
