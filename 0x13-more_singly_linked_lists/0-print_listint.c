@@ -6,7 +6,7 @@
  * Return: retunrn the total nodee
  */
 
-size_t listint_len(const listint_t *h)
+size_t print_listint(const listint_t *h)
 {
 	const listint_t *tmp;
 	size_t count;
@@ -15,7 +15,7 @@ size_t listint_len(const listint_t *h)
 	for (tmp = h; tmp != NULL; tmp = tmp->next)
 	{
 		count++;
-		printf("%d", tmp->n);
+		printf("%d\n", tmp->n);
 	}
 	return (count);
 }
