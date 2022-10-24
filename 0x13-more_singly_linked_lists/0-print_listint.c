@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listint_len - Print all the list of a link while counting the node
+ * print_listint - Print all the list of a link while counting the node
  * @h: the list with a type list_t
  * Return: retunrn the total nodee
  */
