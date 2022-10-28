@@ -7,7 +7,7 @@
 
 int get_endianness(void)
 {
-	int x = 1;
+	int x = 99;
 	char *edia = (char *)&x;
 
 	if (*edia)
