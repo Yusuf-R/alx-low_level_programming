@@ -12,11 +12,9 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t cnt;
-	int op_fd, rd_fd, i;
+	int op_fd, rd_fd, wr_fd;
 	char *buff;
 
-	i = cnt = 0;
 	if (filename == NULL)
 		return (0);
 	op_fd = open(filename, O_RDONLY);
@@ -33,14 +31,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	buff[rd_fd] = '\0';
 	close(op_fd);
-
-	while (buff[i])
+	wr_fd = write(STDOUT_FILENO, buff, rd_fd);
+	if (wr_fd == -1)
 	{
-		_putchar(buff[i]);
-		cnt++;
-		i++;
+		free (buff);
+		return (0);
 	}
 	free(buff);
-	return (cnt);
-
+	return (wr_fd);
 }
