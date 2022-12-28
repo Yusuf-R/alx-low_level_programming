@@ -1,12 +1,11 @@
 #include "lists.h"
 
 /**
- * get_dnodeint_at_index - get the nth node of a D-LL
+ * sum_dlistint - sum the data field of the D-LL
  *
  * @head: the poniter the start node
- * @index: the given index position of the node
  *
- * Return: the pointer to that given node found at the index
+ * Return: the sum of all data in the D-LL
  */
 int sum_dlistint(dlistint_t *head)
 {
