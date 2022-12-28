@@ -1,48 +1,55 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * insert_dnodeint_at_index - inserts a new node at a given position
- * @h: double pointer to the beginning of the linked list
- * @idx: index at which to insert the new node
- * @n: data to enter into new node
+ * insert_dnodeint_at_index - insert a node at the given index
  *
- * Return: pointer to the new node, or NULL on failure
+ * @h: a double poniter the start node
+ * @idx: the given index position of the node
+ * @n: the data field for the given index
+ *
+ * Return: the pointer to the newly added node at the index
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, *next, *current;
-	unsigned int i;
+	dlistint_t *new_node, *curr, *prev;
+	unsigned int count;
 
-	if (h == NULL)
+	if (!h)
 		return (NULL);
-	if (idx != 0)
+	new_node = malloc(sizeof(dlistint_t));
+	if (!new_node)
+		return (NULL);
+	new_node->n = n;
+	new_node->prev = new_node->next = NULL;
+	if (!(*h) && idx == 0)
 	{
-		current = *h;
-		for (i = 0; i < idx - 1 && current != NULL; i++)
-			current = current->next;
-		if (current == NULL)
-			return (NULL);
+		*h = new_node;
+		return (new_node);
 	}
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	if (idx == 0)
+	else if (idx == 0)
 	{
-		next = *h;
-		*h = new;
-		new->prev = NULL;
+		new_node->next = *h;
+		(*h)->prev = new_node;
+		*h = new_node;
+		return (new_node);
 	}
 	else
 	{
-		new->prev = current;
-		next = current->next;
-		current->next = new;
+		while (curr)
+		{
+			prev = curr;
+			curr = curr->next;
+			count++;
+			if (idx == count)
+			{
+				new_node->next = curr;
+				curr->prev = new_node;
+				new_node->prev = prev;
+				prev->next = new_node;
+				return (new_node);
+			}
+		}
 	}
-	new->next = next;
-	if (new->next != NULL)
-		new->next->prev = new;
-	return (new);
+	return (NULL);
 }
