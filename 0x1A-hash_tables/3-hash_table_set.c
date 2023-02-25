@@ -72,12 +72,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	while (trav)
 	{
-		if (strcmp(trav->key, key) == 0)
+		if (!strcmp(trav->key, key))
 		{
-			free(new_node_item->value);
-			free(new_node_item->key);
-			free(new_node_item);
-			return (0);
+			trav->value = strdup(value);
+			return (1);
 		}
 		trav = trav->next;
 	}
