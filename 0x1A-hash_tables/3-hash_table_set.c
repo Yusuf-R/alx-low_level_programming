@@ -77,7 +77,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			free(new_node_item->value);
 			free(new_node_item->key);
 			free(new_node_item);
-			return (1);
+			return (0);
 		}
 		trav = trav->next;
 	}
