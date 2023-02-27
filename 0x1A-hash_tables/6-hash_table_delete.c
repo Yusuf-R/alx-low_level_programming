@@ -1,48 +1,31 @@
 #include "hash_tables.h"
-/**
- * hash_table_delete - delstes the hash table created
- *
- * @ht: the pointer to the hastable
- *
- * Return: all memory freed back to the O.S
- */
 
+/**
+ * hash_table_delete - deletes a hash table
+ * @ht: pointer to hash table
+ *
+ * Return: void.
+ */
 void hash_table_delete(hash_table_t *ht)
 {
-	unsigned long int i;
-	hash_node_t *trav, *temp;
+	unsigned long i = 0;
+	hash_node_t *node, *temp;
 
-	i = 0;
 	if (!ht)
 		return;
-	if (!ht->array)
+
+	for (i = 0; i < ht->size; i++)
 	{
-		free(ht);
-		ht = NULL;
-	}
-	while (i < ht->size)
-	{
-		trav = ht->array[i];
-		while (trav)
+		node = ht->array[i];
+		while (node)
 		{
-			free(trav->key);
-			trav->key = NULL;
-
-			free(trav->value);
-			trav->value = NULL;
-
-			temp = trav->next;
-			free(trav);
-			trav = temp;
+			temp = node;
+			node = node->next;
+			free(temp->key);
+			free(temp->value);
+			free(temp);
 		}
-		free(ht->array[i]);
-		ht->array[i] = NULL;
-		i++;
 	}
-	free(trav);
-	trav  = NULL;
+	free(ht->array);
 	free(ht);
-	ht = NULL;
-	free(temp);
-	temp = NULL;
 }
