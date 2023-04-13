@@ -40,6 +40,6 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) *~ .*~
+	$(RM) $(NAME) $(OBJ) *~ .*~
 	
 re: clean all
