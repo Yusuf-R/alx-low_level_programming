@@ -1,16 +1,48 @@
+# multi level makefile
+# rules: all, clean, oclean, fclean, re
+# all: builds your executable
+# clean: deletes all Emacs and Vim temporary files along with the executable
+# oclean: deletes the object files
+# fclean: deletes all Emacs and Vim temp files, .exe and the obj files
+# re: forces recompilation of all source files
+
+
+# Compiler to be used
 CC = gcc
+
+# Source files
 SRC = main.c school.c
-OBJ = $(patsubst %.c,%.o,$(SRC))
+
+# Object files
+OBJ = $(SRC:.c=.o)
+
+# Executable name
 NAME = school
+
+# Program to delete files
 RM = rm -f
+
+#Flags for error check
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all : $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
-clean :
-	$(RM) *~ $(NAME)
-oclean :
+
+.PHONY: all clean oclean fclean re
+
+     
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(NAME) *~ .*~
+
+oclean:
 	$(RM) $(OBJ)
-fclean :
-	$(RM) *~ $(NAME) $(OBJ)
-re : oclean $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+
+fclean:
+	$(RM) $(NAME) $(OBJ) *~ .*~
+	
+re: fclean all
