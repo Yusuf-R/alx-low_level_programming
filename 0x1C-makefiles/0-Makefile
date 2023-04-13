@@ -1,2 +1,7 @@
-all : main.c school.c m.h
+#Create your first makefile
+# use the all keyword
+
+all: school
+
+school: main.c school.c m.h
 	gcc main.c school.c -o school
