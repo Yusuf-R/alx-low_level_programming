@@ -30,6 +30,8 @@ int jump_search(int *array, size_t size, int value)
 	printf("%s [%lu] and [%lu]\n", mfnd, jump, l_idx);
 	if (l_idx >= size)
 		l_idx = size - 1;
+	else
+		l_idx = l_idx;
 	while (jump <= l_idx)
 	{
 		printf("%s[%lu] = [%d]\n", msg, jump, array[jump]);
