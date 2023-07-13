@@ -21,6 +21,9 @@ int jump_search(int *array, size_t size, int value)
 	jump = sqrt(size);
 	l_idx = 0;
 
+	if (!array || !size)
+		return (-1);
+
 	while (l_idx < size && array[l_idx] < value)
 	{
 		printf("%s[%lu] = [%d]\n", msg, l_idx, array[l_idx]);
