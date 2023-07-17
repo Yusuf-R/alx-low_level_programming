@@ -1,70 +1,72 @@
 #include "search_algos.h"
+#include <stdio.h>
 
 /**
- * exponential_search - searches for a val in a sorted arr using ESA
- * @array: pointer to 1st element of the array
- * @size: number of elements in array
- * @value: value to be searched
- *
- * Return: index of value or -1
+ * bin_exp_search - use the bin algo here
+ * @array: array of integers
+ * @l_idx: left most index
+ * @r_idx: right most index
+ * @value: the value to serch
+ * Return: index of value, -1 if not found
  */
-int exponential_search(int *array, size_t size, int value)
+int bin_exp_search(int *array, size_t l_idx, size_t r_idx, int value)
 {
-	size_t idx = 1, s_new = 0;
-	int ret_val;
+	size_t m_idx, i;
+	char *msg = "Searching in array";
 
-	if (!array || !size)
-		return (-1);
-
-	while (idx < size && array[idx] < value)
+	while (l_idx <= r_idx)
 	{
-		printf("Value checked array[%lu] = [%d]\n", idx, array[idx]);
-		idx <<= 1;
-	}
-	s_new = (idx >= size ? size : idx + 1) - (idx >> 1);
-	idx >>= 1;
-	printf("Value found between indexes [%lu] and [%lu]\n",
-			idx, idx << 1 >= size ? size - 1 : idx << 1);
-	ret_val = binary_search(array + idx, s_new, value);
-	return (ret_val == -1 ? ret_val : ret_val + (int)idx);
-}
-
-#include "search_algos.h"
-
-/**
- * binary_search - searches for a value in a sorted array of integers using BSA
- * @array: pointer to first element of array to search
- * @size: size of the array
- * @value: value to seach for
- *
- * Return: index of value location or -1
- */
-
-int binary_search(int *array, size_t size, int value)
-{
-	size_t x_st = 0, y_end = size - 1, mdx;
-	size_t idx;
-
-	if (!array || !size)
-		return (-1);
-
-	while (x_st <= y_end)
-	{
-		mdx = (x_st + y_end) / 2;
-		printf("Searching in array:");
-		for (idx = x_st; idx <= y_end; idx++)
+		m_idx = (l_idx + r_idx) / 2;
+		printf("%s: ", msg);
+		for (i = l_idx; i <= r_idx; i++)
 		{
-			if (idx < y_end)
-				printf(" %d,", array[idx]);
+			if (i == r_idx)
+				printf("%d\n",  array[i]);
 			else
-				printf(" %d\n", array[idx]);
+				printf("%d, ", array[i]);
 		}
-		if (array[mdx] == value)
-			return (mdx);
-		else if (array[mdx] > value)
-			y_end = mdx - 1;
+		if (array[m_idx] < value)
+			l_idx = m_idx + 1;
+		else if (array[m_idx] > value)
+			r_idx = m_idx - 1;
 		else
-			x_st = mdx + 1;
+			return (m_idx);
 	}
 	return (-1);
+}
+
+/**
+ * exponential_search - search value using this algorithm
+ * @array: array of integers
+ * @size: size of array
+ * @value: value to search for
+ * Return: index of value, -1 if not found
+ */
+
+int exponential_search(int *array, size_t size, int value)
+{
+	char *exp_msg = "Value checked array";
+	char *exp_fnd = "Value found between indexes";
+	size_t idx = 1;
+	size_t high, low;
+
+	if (!array || !size || size == 0)
+		return (-1);
+
+	if (array[0] == value)
+	{
+		printf("%s[0] = [%d]\n", exp_msg, array[0]);
+		return (0);
+	}
+	while (idx < size && array[(int)idx] < value)
+	{
+		printf("%s[%lu] = [%d]\n", exp_msg, idx, array[idx]);
+		idx *= 2;
+	}
+
+	high = idx > size ? size : idx;
+	low = idx / 2;
+
+	printf("%s [%lu] and [%lu]\n", exp_fnd, low, high - 1);
+	return (bin_exp_search(array, low, high - 1, value));
 }
