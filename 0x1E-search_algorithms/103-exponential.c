@@ -58,15 +58,19 @@ int exponential_search(int *array, size_t size, int value)
 		printf("%s[0] = [%d]\n", exp_msg, array[0]);
 		return (0);
 	}
-	while (idx < size && array[(int)idx] < value)
+	while (array[(int)idx] < value)
 	{
 		printf("%s[%lu] = [%d]\n", exp_msg, idx, array[idx]);
 		idx *= 2;
 	}
 
-	high = idx > size ? size : idx;
 	low = idx / 2;
+	if (idx >= size)
+		high = size - 1;
+	else
+		high = idx;
 
-	printf("%s [%lu] and [%lu]\n", exp_fnd, low, high - 1);
-	return (bin_exp_search(array, low, high - 1, value));
+
+	printf("%s [%lu] and [%lu]\n", exp_fnd, low, high);
+	return (bin_exp_search(array, low, high, value));
 }
